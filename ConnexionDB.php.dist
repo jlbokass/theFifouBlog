@@ -1,10 +1,15 @@
 <?php
 
+/**
+ * @ConnexionDB
+ * @author PHP Crew
+ * PHP 8.1
+ */
 class ConnexionDB
 {
     private const SERVER = 'localhost';
     private const USER = 'root';
-    private const PASSWORD = '';
+    private const PASSWORD = 'dabok1977';
     private const DATABASE = 'the_fifou_blog';
 
     private PDO $connexion;
@@ -14,5 +19,26 @@ class ConnexionDB
         $this->connexion = new PDO("mysql:host=" . self::SERVER . ";dbname=" . self::DATABASE . ";charset=utf8", self::USER, self::PASSWORD);
     }
 
+    /**
+     * @return array|null
+     */
+    public function getAllArticles(): array|null
+    {
+        $sql = "SELECT id,title, content FROM article";
 
+        $statement = $this->connexion->query($sql);
+
+        return $statement->fetchAll();
+    }
+
+    public function getSingleArticleById(int $id): mixed
+    {
+        $sql = "SELECT id, title, content FROM article WHERE id=:id";
+        $statement = $this->connexion->prepare($sql);
+
+        $statement->bindValue(':id', $id, PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetch();
+    }
 }

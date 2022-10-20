@@ -27,6 +27,11 @@ class ArticleController
         require '../src/Views/show.php';
     }
 
+    public function add()
+    {
+        require '../src/Views/add.php';
+    }
+
     /**
      * @return void
      */
