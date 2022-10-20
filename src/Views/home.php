@@ -13,7 +13,7 @@
 <?php if ($articles): ?>
     <div>
         <?php foreach ($articles as $article): ?>
-        <h3><?= $article['title'] ?></h3>
+        <h3><a href="show?id=<?php echo $article['id'] ?>"><?= $article['title'] ?></a></h3>
         <p><?= $article['content'] ?></p>
         <?php endforeach; ?>
     </div>

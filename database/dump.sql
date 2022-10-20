@@ -8,4 +8,7 @@ CREATE TABLE article (
 );
 
 -- Get all article
-SELECT id,title, content FROM article;
+SELECT id,title, content FROM article ORDER BY id DESC;
+
+-- Get a single article
+SELECT id, title, content FROM article WHERE id = 1;

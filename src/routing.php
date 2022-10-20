@@ -8,7 +8,7 @@ $articleController = new ArticleController();
 if ($pathURL === '/home') {
     $articleController->home();
 } else if ($pathURL === '/show') {
-    $articleController->show();
+    $articleController->show($_GET['id']);
 } else if ($pathURL === '/edit') {
     $articleController->edit();
 } else if ($pathURL === '/delete') {

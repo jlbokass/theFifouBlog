@@ -15,10 +15,15 @@ class ArticleController
     }
 
     /**
+     * @param $id
+     *
      * @return void
      */
-    public function show(): void
+    public function show($id): void
     {
+        $connexion = new ConnexionDB();
+        $article = $connexion->getSingleArticleById($id);
+
         require '../src/Views/show.php';
     }
 

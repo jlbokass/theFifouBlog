@@ -8,6 +8,12 @@
     <title>Show</title>
 </head>
 <body>
+<a href="home">Back Home</a>
 <h1>Show</h1>
+<div>
+    <h3><?= $article['title'] ?></h3>
+    <p><?= $article['content'] ?></p>
+    <a href="">Edit</a> <a href="">Delete</a>
+</div>
 </body>
 </html>
