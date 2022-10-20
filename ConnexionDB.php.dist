@@ -1,0 +1,18 @@
+<?php
+
+class ConnexionDB
+{
+    private const SERVER = 'localhost';
+    private const USER = 'root';
+    private const PASSWORD = '';
+    private const DATABASE = 'the_fifou_blog';
+
+    private PDO $connexion;
+
+    public function __construct()
+    {
+        $this->connexion = new PDO("mysql:host=" . self::SERVER . ";dbname=" . self::DATABASE . ";charset=utf8", self::USER, self::PASSWORD);
+    }
+
+
+}
