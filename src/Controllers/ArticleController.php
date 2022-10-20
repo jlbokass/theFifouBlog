@@ -29,6 +29,9 @@ class ArticleController
 
     public function add()
     {
+        if ($_SERVER['REQUEST_METHOD'] === "POST") {
+            var_dump($_POST);
+        }
         require '../src/Views/add.php';
     }
 
